@@ -80,7 +80,7 @@ crontab -l
 如果没有保活设置成功可以执行下面命令
 - 重启机保活
 ```
-(crontab -l; echo "@reboot pkill -kill -u <username> && nohup /home/${USER}/.s5/s5 -c /home/<username>/.s5/config.json >/dev/null 2>&1 & && nohup /home/<username>/.nezha-agent/start.sh >/dev/null 2>&1 &") | crontab -
+(crontab -l; echo "@reboot pkill -kill -u <username> && nohup /home/${USER}/.s5/s5 -c /home/${USER}/.s5/config.json >/dev/null 2>&1 & && nohup /home/<username>/.nezha-agent/start.sh >/dev/null 2>&1 &") | crontab -
 ```
 - nezha-agent保活
 ```
@@ -88,7 +88,7 @@ crontab -l
 ```
 s5保活
 ```
-(crontab -l; echo "*/12 * * * * pgrep -x "s5" > /dev/null || nohup /home/${USER}/.s5/s5 -c /home/<username>/.s5/config.json >/dev/null 2>&1 &") | crontab -
+(crontab -l; echo "*/12 * * * * pgrep -x "s5" > /dev/null || nohup /home/${USER}/.s5/s5 -c /home/${USER}/.s5/config.json >/dev/null 2>&1 &") | crontab -
 ```
 
 
